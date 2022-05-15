@@ -1,16 +1,16 @@
-const query = require("../queries/student")
+const query = require("../queries/parent")
 
-const studentPostData = async function(req,res){
+const parentPostData = async function(req,res){
     try{
         const body = req.body;
-        const obj1 = {
-            studentName:body.studentName,
+        const obj = {
+            parentName:body.parentName,
             class:body.class,
             rollNumber:body.rollNumber,
             mobileNo:body.mobileNo,
             password:body.password    
         }
-        const data = await query.studentPostQuery(obj1);
+        const data = await query.parentPostQuery(obj);
         return res.send(data)
     }
     catch(err){
@@ -19,9 +19,10 @@ const studentPostData = async function(req,res){
     }
 }
 
-const getAllStudentData =async function(req,res){
+
+const getAllParentData =async function(req,res){
     try{
-        const result = await query.getAllStudentQuery();
+        const result = await query.getAllParentQuery();
         return res.send(result);
     }
     catch(err){
@@ -32,11 +33,10 @@ const getAllStudentData =async function(req,res){
 
 
 
+
 module.exports={
-    studentPostData,
-    getAllStudentData
+    parentPostData,
+    getAllParentData
 };
-
-
 
 
