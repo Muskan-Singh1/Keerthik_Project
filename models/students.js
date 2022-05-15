@@ -49,5 +49,7 @@ module.exports = (sequelize, DataType) => {
     }
     }
   )
+  student.associate = function (models){
+  };
   return student;
 };

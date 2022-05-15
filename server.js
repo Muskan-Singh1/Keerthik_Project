@@ -6,6 +6,8 @@ app.use(express.json());
 
 app.use('/studentDetails',require('./router/student'));
 
+app.use('/parentDetails',require('./router/parent'));
+
 
 app.listen(5000,()=>{
     console.log("server is running on port 5000 ")
