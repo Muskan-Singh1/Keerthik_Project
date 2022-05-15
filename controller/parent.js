@@ -20,8 +20,23 @@ const parentPostData = async function(req,res){
 }
 
 
+const getAllParentData =async function(req,res){
+    try{
+        const result = await query.getAllParentQuery();
+        return res.send(result);
+    }
+    catch(err){
+        console.log(err);
+        res.send(err)
+    }
+}
+
+
+
+
 module.exports={
-    parentPostData
+    parentPostData,
+    getAllParentData
 };
 
 

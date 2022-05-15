@@ -19,9 +19,22 @@ const studentPostData = async function(req,res){
     }
 }
 
+const getAllStudentData =async function(req,res){
+    try{
+        const result = await query.getAllStudentQuery();
+        return res.send(result);
+    }
+    catch(err){
+        console.log(err);
+        res.send(err)
+    }
+}
+
+
 
 module.exports={
-    studentPostData
+    studentPostData,
+    getAllStudentData
 };
 
 

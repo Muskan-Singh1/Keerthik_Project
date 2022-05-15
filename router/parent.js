@@ -5,5 +5,7 @@ const ctrl = require("../controller/parent");
 
 router.post("/post/parent/data",ctrl.parentPostData);
 
+router.get("/get/all/parent/data",ctrl.getAllParentData);
+
 
 module.exports = router;
